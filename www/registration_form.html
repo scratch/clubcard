@@ -37,27 +37,39 @@
 }
 </style>
 
+<script>
+function writeRegnInfo(data) {
+    console.log(data.uname.value)
+    console.log(data.dob.value)
+    console.log(data.addr.value)
+    console.log(data.utype.value)
+    console.log(data.game.value)
+    console.log(data.mob.value)
+    console.log(data.timing.value)
+    return false;
+}
+</script>
+
+
 <body>
   <div class="container">
       <div class="heading-section">
         <h1>Registration Form</h1>
-        <h2>Heading 1</h2>
-        <h2>Heading 2</h2>
-        <h2>Headind 3 </h2>
       </div>
-    <form >
+    <form name="regn" action="" method="GET">
       <div class="leftImagesUpload">
-        <button>Upload Logo</button>
+        <button>Upload Logo </button>
         <button> Upload Image</button>
       </div>
       <div class="rightEnteryUserData">
-        <input type="text" placeholder="Name">
-        <input type="text" placeholder="Address">
-        <input type="text" placeholder="student/non Student">
-        <input type="text" placeholder="">
-        <input type="text" placeholder="">
-        <input type="text" placeholder="">
-        <input type="text" placeholder="">
+        <input type="text" name="uname" value="" placeholder="Name">
+        <input type="text" name="dob" value="" placeholder="Date Of Birth">
+        <input type="text" name="addr" placeholder="Resident Of">
+        <input type="text" name="utype" placeholder="Student/nonstudent">
+        <input type="text" name="game" placeholder="Game(s)">
+        <input type="text" name="mob" placeholder="Mobile/Ph">
+        <input type="text" name="timing" placeholder="Timing">
+        <input type="button" name="Button" value="Add" onClick="writeRegnInfo(this.form)">
       </div>
     </form>
   </div>

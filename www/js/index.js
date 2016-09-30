@@ -47,7 +47,7 @@ var app = {
        var residence = document.getElementById("residence_of").value;
        document.getElementById("residence").innerHTML = "Residence:" + " " + residence
 
-       var student_non = document.getElementById("student_Non").value;
+       var student_non = document.getElementById("student_non").value;
        document.getElementById("student_non").innerHTML ="Student/Non:" + " " + student_non
 
        var game = document.getElementById("game").value;
@@ -56,7 +56,7 @@ var app = {
        var contact = document.getElementById("number").value;
        document.getElementById("contact").innerHTML = "Mob/Ph:" + " " + contact
 
-        var timing = document.getElementById("timing").value;
+        var timing = document.getElementById("mytime").value;
        document.getElementById("timing").innerHTML = "Timing" + " " + timing
 
        var image = document.getElementById("userImage").src;

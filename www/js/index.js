@@ -27,25 +27,48 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        // app.receivedEvent('deviceready');
+
     },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+    showValues: function () {
+       var name = document.getElementById("userName").value;
+       document.getElementById("name").innerHTML = "Name:"  + "  " +  name;
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+       var dob = document.getElementById("dob").value;
+       document.getElementById("date_of_birth").innerHTML = "D.O.B:" + " " + dob;
 
-        console.log('Received Event: ' + id);
-    }
+       var residence = document.getElementById("residence_of").value;
+       document.getElementById("residence").innerHTML = "Residence:" + " " + residence
+
+       var student_non = document.getElementById("student_Non").value;
+       document.getElementById("student_non").innerHTML ="Student/Non:" + " " + student_non
+
+       var game = document.getElementById("game").value;
+       document.getElementById("Game").innerHTML = "Game:" + " " + game
+
+       var contact = document.getElementById("number").value;
+       document.getElementById("contact").innerHTML = "Mob/Ph:" + " " + contact
+
+        var timing = document.getElementById("timing").value;
+       document.getElementById("timing").innerHTML = "Timing" + " " + timing
+
+       var image = document.getElementById("userImage").src;
+
+       var showImage = document.createElement("IMG");
+        showImage.className = 'user_uplodad_img'
+        showImage.setAttribute("src", image);
+        document.body.appendChild(showImage);
+      
+       return false;
+    },
+
 };
 
 app.initialize();

@@ -1,0 +1,149 @@
+<html>
+<head>
+</head>    
+<style type="text/css">
+    .generated_card {
+        width: 100%;
+        margin-top: 70px;
+    }
+    .head_section{
+        text-align: center;
+    }
+    .head_section span {
+        font-size: 20px;
+        line-height: 30px;
+        color: gray;
+        font-weight: bold;
+    }
+    .head2, .head3 {
+        text-decoration: underline;
+    }
+    .logo img {
+        width: 60px;
+        height: 60px;
+    }
+    .logo_heading {
+        width: 100%;
+    }
+    .logo {
+        width: 30%;
+        float: left;
+        display: inline-block;
+    }
+    .heading {
+        width: 70%;
+        display: inline-block;
+    }
+    .heading span {
+        font-size: 20px;
+        line-height: 30px;
+        color: gray;
+        font-weight: bold;
+    }
+    .user_profile {
+        width: 100%;
+        display: inline-block;
+    }
+    .user_image_left {
+        float: left;
+        width: 30%;
+        display: inline-block;
+        margin-top: 5px;
+    }
+    .user_uplodad_img {
+        width: 90px;
+        height: 115px;
+        border-radius: 10px;
+    }
+    .user_info_right {
+        width: 70%;
+        display: inline-block;
+    }
+    canvas {
+        width: 100%;
+    }
+    @media (orientation : landscape){ 
+        .generated_card  {
+            border: 1px solid black;
+            width: 100%;
+            margin-top: 0px;
+        }
+        .logo {
+            width: 26%;
+            text-align: right;
+        }
+        .heading {
+            width: 74%;
+        }
+        .heading span {
+            margin-left: 100px;
+        }
+        .logo img {
+            margin-left: 0px;
+        }
+        .user_image_left {
+            width: 30%;
+            text-align: right;
+            margin-right: 10%;
+        }
+        .user_info_right {
+            width: 60%;
+            display: inline-block;
+        }
+    }
+</style>
+<body onload="app.init()";>
+    <div class="generated_card">
+        <div class="head_section" style="width: 100%">
+            <span class="head1">
+                Dept of Youth Services & Sports Himachal Pradesh 
+            </span><br />
+            <span class="head2">
+                Indoor Stadium Dharamshala
+            </span><br />
+        </div>
+        <div class="logo_heading">
+            <div class="logo">
+                <img src="img/gai_logo.png" />
+            </div>
+            <div class="heading">
+                <span class="head3">
+                    Identity card
+                </span>
+            </div>
+        </div>
+        <div class="user_profile">
+            <div class="user_image_left">
+                <div id="image"></div>
+                
+            </div>
+            <div class="user_info_right">
+                <label>Name</label>
+                <span id="username"></span><br />
+                <label>Date of Birth</label>
+                <span id="DOB"></span><br />
+                <label>Residence of</label>
+                <span id="Adress"></span><br />
+                <label>Student/Non</label>
+                <span id="Student_Nom"></span><br />
+                <label>Game</label>
+                <span id="game"></span><br />
+                <label>Number</label>
+                <span id="number"></span><br />
+                <label>Time</label>
+                <span id="time"></span>
+            </div>
+        </div>
+    </div>
+    <button onclick="app.generateCanvasImage()">Create Card Image</button>
+    <div id="canvas"></div>
+      <script type="text/javascript" src="cordova.js"></script>
+     <script type="text/javascript" src="js/filesystem.js"></script>
+
+     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/html2canvas.js"></script>
+   
+
+</body>
+
+</html>

@@ -87,94 +87,31 @@
                     align: middle;
                 }
                 .generate_pass {
-                 height: 50px;
-                 width: 90%;
-                 color: white;
-                 background: red;
-                 border-radius: 50px;
-                 border: 0px;
-                 font-size: 24px;
-                 outline: none;
+                   height: 50px;
+                   width: 95%;
+                   color: white;
+                   background: red;
+                   border-radius: 50px;
+                   border: 0px;
+                   font-size: 24px;
+                   outline: none;
+                   margin-left: 2.4%;
 
-             }
-             .submit-section {
+               }
+               .user_icon {
                 width: 100%;
                 text-align: center;
-            }
-            .card_logo_left {
-                float: left;
-                width: 30%;
-                margin-top: -5px;
-            }
-            .card_logo_left img {
-                margin-left: 10px;
-            }
-            .identity_card {
-                width: 70%;
-                text-align: center;
-                margin-top: 10px;
-            }
-            .identity_card span{
-                font-size: 20px;
-                font-weight: bold;
-                color: grey;
-                line-height: 30px;
-            }
-            .card_user_info span {
-                padding-left: 20px;
-                line-height: 1.3;
-            }
-            .sidenav {
-                height: 100%;
-                width: 0;
-                position: fixed;
-                z-index: 1;
-                top: 0;
-                left: 0;
-                background-color: #fff;
-                overflow-x: hidden;
-                transition: 0.5s;
-                padding-top: 60px;
-            }
+               }
+               .upload_icon {
+                    width: 55px;
+                    height: 55px;
+                    border-radius: 10px;
+               }
 
-            .sidenav a {
-                padding: 8px 8px 8px 32px;
-                text-decoration: none;
-                font-size: 25px;
-                color: #818181;
-                display: block;
-                transition: 0.3s
-
-            }
-            .sidenav a:hover{
-                color: #f1f1f1;
-            }
-            .card_logo {
-                width: 100%;
-                float: left;
-            }
-            .user_info {
-                float: left;
-                width: 100%;
-            }
-            .profile {
-                float: left;
-                width: 30%;
-            }
-            .user_uplodad_img {
-                width: 80px;
-                height: 120px;
-                margin-left: 10px;
-                border-radius: 10px;
-            }
-            .card_user_info {
-                width: 70%;
-                float: left;
-                margin-top: -6px;
-            }
-        </style>
-    </head>
-    <body>
+             
+           </style>
+       </head>
+       <body>
         <div class="app">
             <div class="head_section" style="width: 100%">
                 <span class="head1">
@@ -191,63 +128,28 @@
             <div class="logo">
                 <img src="img/gai_logo.png" />
             </div>
-            <form id="myForm">
-                <input type="text" id="userName" placeholder="Name" /><br />
+            <form id="clubCardForm" action="card.html" >
+            <input type="text" id="userName" placeholder="Name" /><br />
                 <input type="text" id="dob" placeholder="Date of Birth"><br />
                 <input type="text" id="address" placeholder="Residence of"><br />
                 <input type="text" id="student_Non" placeholder="Student/Non Student"><br />
                 <input type="text" id="game" placeholder="Game"></br>
                 <input type="number" id="number" placeholder="Mob/Ph"> <br />
                 <input type="number" id="time" placeholder="Timing"><br />
-                <input class="upload_image" type="file" onchange="document.getElementById('userImage').src = window.URL.createObjectURL(this.files[0]);">
-                <div class="user_image">
-                    <img id="userImage" class="userImage"><br />
+                <input class="upload_image" accept="image/*" type="file" onchange="app.readURL(this);">
+                <div class="user_icon">
+                    <img id="blah" src="img/profile_icon.png" class="upload_icon" alt="your image" />
                 </div>
                 <div class="submit-section">
-                    <button type="submit" class="generate_pass" onclick="return app.showValues();">Generate Pass</button>
+                    <button type="submit" class="generate_pass" onclick="return app.getvalues();">Generate Pass</button>
                 </div>
-            </form>
-                <div id="mySidenav" class="sidenav">
-                    <div class="card">
-                        <div class="head_section" style="width: 100%">
-                            <span class="head1">
-                                Dept of Youth Services & Sports H.P 
-                            </span><br />
-                            <span class="head2">
-                                Indoor Stadium Dharamshala
-                            </span><br />
 
-                        </div>
-                        <div class="card_logo">
-                            <div class="card_logo_left">
-                                <img src="img/gai_logo.png" />
-                            </div>
-                            <div class="identity_card">
-                                <span class="head3">Identity Card</span>
-                            </div>
-                        </div>
-                        <div class="user_info">
-                            <div id="profile_image" class="profile"></div>
-                            <div class="card_user_info">
-                                <span id="name"></span><br />
-                                <span id="date_of_birth"></span><br />
-                                <span id="residence"></span><br />
-                                <span id="student_non"></span><br />
-                                <span id="Game"></span><br />
-                                <span id="contact"></span><br />
-                                <span id="timing"></span>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <canvas id="canvas"></canvas>
-                
-            <script type="text/javascript" src="cordova.js"></script>
-            <script type="text/javascript" src="js/index.js"></script>
-            <script type="text/javascript" src="js/html2canvas.js"></script>
-            <script type="text/javascript">
-               
-            </script>
-        </body>
-        </html>
+                <script type="text/javascript" src="cordova.js"></script>
+                 <script type="text/javascript" src="js/filesystem.js"></script>
+                <script type="text/javascript" src="js/index.js"></script>
+                <script type="text/javascript" src="js/html2canvas.js"></script>
+                <script type="text/javascript">
+
+                </script>
+            </body>
+            </html>

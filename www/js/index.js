@@ -123,6 +123,7 @@
                     // can.appendChild(canvas);
                     // var canvas = document.getElementById('example'),
                         dataUrl = canvas.toDataURL("image/jpeg;base64;"),
+
                         imageFoo = document.createElement('img');
                     imageFoo.src = dataUrl;
 
@@ -136,14 +137,17 @@
                     var file = new FileManager;
                     // file.download_file(imageFoo.src, 'clubcard', "img.jpeg", log("success"));
                     //alert("hello")
-                    file.download_file('http://vignette3.wikia.nocookie.net/harrypotter/images/7/79/Kreacher.img.jpg','/clubcard','Kreacher.img.jpg',Log('downloaded sucess'));
+                    var name = localStorage.getItem("userName");
+                    var filename = 'clubcard'+name + '.jpg';
+                    file.download_file(dataUrl,'/clubcard',filename,Log('downloaded sucess'));
+                    
                 },
                 background: '#FFF'
             });
 
         },
 
-        fileSystem: function () {
+            fileSystem: function () {
             window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
 
                 console.log('file system open: ' + fs.name);

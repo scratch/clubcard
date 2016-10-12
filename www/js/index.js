@@ -39,6 +39,16 @@
         var dir = new DirManager;
          dir.create('/clubcard', Log('created successfully'), Log('something went wrong'));
     },
+
+    drawer: function () {
+        document.getElementById("drawer").style.width = "100%";
+        
+    },
+
+    closeDrawer: function () {
+        document.getElementById("drawer").style.width = "";
+    },
+
     getvalues: function () {
         // Getting the value of your text input
         var username = document.getElementById("userName").value;

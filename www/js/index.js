@@ -51,14 +51,14 @@
 
     getvalues: function () {
         // Getting the value of your text input
-            var username =  document.getElementById("userName").value;
+        var username =  document.getElementById("userName").value;
             // Storing the value above into localStorage
             localStorage.setItem("userName", username);
 
-            var dateOfBirth = "Date of Birth :" + document.getElementById("dob").value;
+            var dateOfBirth = document.getElementById("dob").value;
             localStorage.setItem("dob", dateOfBirth);
 
-            var addrr = "address" + document.getElementById("address").value;
+            var addrr = document.getElementById("address").value;
             localStorage.setItem("address", addrr);
 
             var student_non  = document.getElementById("student_Non").value;
@@ -94,71 +94,98 @@
             var cardType = document.getElementById("cardType").innerHTML;
             localStorage.setItem("cardType", cardType);
 
+            var nameLabel = document.getElementById("nameLabel").innerHTML;
+            localStorage.setItem("nameLabel", nameLabel);
+
+            var dateOfBirt = document.getElementById("dateOfBirt").innerHTML;
+            localStorage.setItem("dateOfBirt", dateOfBirt);
+
+            var residence_field = document.getElementById("residence_field").innerHTML;
+            localStorage.setItem("residence_field", residence_field);
+
+            var multiple = document.getElementById("multiple").innerHTML;
+            localStorage.setItem("multiple", multiple);
+
+            var addGame = document.getElementById("addGame").innerHTML;
+            localStorage.setItem("addGame", addGame);
+
+            var editPhone = document.getElementById("editPhone").innerHTML;
+            localStorage.setItem("editPhone", editPhone);
+
+            var Timing_field = document.getElementById("Timing_field").innerHTML;
+            localStorage.setItem("Timing_field", Timing_field);
             return true;
-        },
+    },
 
-        init: function () {
-            document.getElementById("organiztion").innerHTML = localStorage.getItem("organisation")
-            document.getElementById("print-title").innerHTML = localStorage.getItem("title");
-            document.getElementById("print-card").innerHTML = localStorage.getItem("cardType");
-            document.getElementById("username").innerHTML = localStorage.getItem("userName");
-            document.getElementById("DOB").innerHTML = localStorage.getItem("dob");
-            document.getElementById("Adress").innerHTML = localStorage.getItem("address");
-            document.getElementById("Student_Nom").innerHTML = localStorage.getItem("student_non");
-            document.getElementById("game").innerHTML = localStorage.getItem("game");
-            document.getElementById("number").innerHTML = localStorage.getItem("number");
-            document.getElementById("time").innerHTML = localStorage.getItem("time");
+    init: function () {
+        document.getElementById("organiztion").innerHTML = localStorage.getItem("organisation")
+        document.getElementById("print-title").innerHTML = localStorage.getItem("title");
+        document.getElementById("print-card").innerHTML = localStorage.getItem("cardType");
+        document.getElementById("getlabel").innerHTML = localStorage.getItem("nameLabel");
+        document.getElementById("username").innerHTML = localStorage.getItem("userName");
+        document.getElementById("get_dob").innerHTML = localStorage.getItem("dateOfBirt");    
+        document.getElementById("DOB").innerHTML = localStorage.getItem("dob");
+        document.getElementById("get_residence").innerHTML = localStorage.getItem("residence_field");
+        document.getElementById("Adress").innerHTML = localStorage.getItem("address");
+        document.getElementById("get_multiple").innerHTML = localStorage.getItem("multiple");''
+        document.getElementById("Student_Nom").innerHTML = localStorage.getItem("student_Non");
+        document.getElementById("getGame").innerHTML = localStorage.getItem("addGame");
+        document.getElementById("game").innerHTML = localStorage.getItem("game");
+        document.getElementById("get_contact").innerHTML = localStorage.getItem("editPhone");
+        document.getElementById("number").innerHTML = localStorage.getItem("number");
+        document.getElementById("get_time").innerHTML = localStorage.getItem("Timing_field");
+        document.getElementById("time").innerHTML = localStorage.getItem("time");
 
-            var imageUrl = localStorage.getItem("userImage");
+        var imageUrl = localStorage.getItem("userImage");
 
-            var getImage = document.getElementById("image");
+        var getImage = document.getElementById("image");
 
-            var showImage = document.createElement("IMG");
-            showImage.className = 'user_uplodad_img';
-            showImage.id = "usr_image";
-            showImage.setAttribute("src", imageUrl);
-            var show = getImage.appendChild(showImage);
+        var showImage = document.createElement("IMG");
+        showImage.className = 'user_uplodad_img';
+        showImage.id = "usr_image";
+        showImage.setAttribute("src", imageUrl);
+        var show = getImage.appendChild(showImage);
 
-            var updatedImgUrl = localStorage.getItem("logo_edit");
-            var createUpdatedImage = document.getElementById("logo");
+        var updatedImgUrl = localStorage.getItem("logo_edit");
+        var createUpdatedImage = document.getElementById("logo");
 
-            var showUpdatedImage = document.createElement("IMG");
-            showUpdatedImage.className = "updatedImage";
-            showUpdatedImage.id = "updatedImageShow";
-            showUpdatedImage.setAttribute("src", updatedImgUrl);
-            var displayUpdated = createUpdatedImage.appendChild(showUpdatedImage)
-        },
+        var showUpdatedImage = document.createElement("IMG");
+        showUpdatedImage.className = "updatedImage";
+        showUpdatedImage.id = "updatedImageShow";
+        showUpdatedImage.setAttribute("src", updatedImgUrl);
+        var displayUpdated = createUpdatedImage.appendChild(showUpdatedImage)
+    },
 
-        generateCanvasImage: function() {
-         html2canvas(document.body, {
+    generateCanvasImage: function() {
+        html2canvas(document.body, {
             onrendered: function(canvas) {
                 var can = document.getElementById("canvas")
-                    // can.appendChild(canvas);
-                    // var canvas = document.getElementById('example'),
-                    dataUrl = canvas.toDataURL("image/jpeg;base64;"),
+                // can.appendChild(canvas);
+                // var canvas = document.getElementById('example'),
+                dataUrl = canvas.toDataURL("image/jpeg;base64;"),
 
-                    imageFoo = document.createElement('img');
-                    imageFoo.src = dataUrl;
+                imageFoo = document.createElement('img');
+                imageFoo.src = dataUrl;
 
-                    // Style your image here
-                    imageFoo.style.width = '100%';
-                    imageFoo.style.height = '100%';
+                // Style your image here
+                imageFoo.style.width = '100%';
+                imageFoo.style.height = '100%';
 
                     // After you are done styling it, append it to the BODY element
 
-                    can.appendChild(imageFoo);
-                    var file = new FileManager;
+                can.appendChild(imageFoo);
+                var file = new FileManager;
                     // file.download_file(imageFoo.src, 'clubcard', "img.jpeg", log("success"));
                     //alert("hello")
-                    var name = localStorage.getItem("userName");
-                    var filename = 'clubcard'+name + '.jpg';
-                    file.download_file(dataUrl,'/clubcard',filename,Log('downloaded sucess'));
-                    
-                },
-                background: '#FFF'
-            });
+                var name = localStorage.getItem("userName");
+                var filename = 'clubcard'+name + '.jpg';
+                file.download_file(dataUrl,'/clubcard',filename,Log('downloaded sucess'));   
+            },
+             background: '#FFF'
 
-     },
+        });
+
+    },
 
      fileSystem: function () {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
@@ -193,8 +220,8 @@
     },
 
     readURLForProfile:function(input) {
-          if (input.files && input.files[0]) {
-            var reader = new FileReader();
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
             reader.onload = function (e) {
                 document.getElementById("blah").src = e.target.result;
             };
@@ -203,8 +230,8 @@
     },
 
     readURLForEditLogo:function(input) {
-          if (input.files && input.files[0]) {
-            var reader = new FileReader();
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
             reader.onload = function (e) {
                 document.getElementById("logo_edit").src = e.target.result;
             };
@@ -212,14 +239,40 @@
         }
     },
 
-    // edit: function () {
+    editName: function () {
+        var firstField = prompt("Enter your field name", "Name")
+        var changeField = document.getElementById("nameLabel").innerHTML = firstField;
+    },
 
-        
-    //      var text = prompt("Crete your values", "test")
-    //      var a = document.getElementById("testname").innerHTML = text;
-    // },
+    editDOB: function() {
+        var secondField = prompt("Enter Your field Name", "Date of Birth");
+        var changeField = document.getElementById("dateOfBirt").innerHTML = secondField;
+    },
 
+    editAddress: function () {
+        var thirdField = prompt("Enter your filed name ", "Address")
+        var changeField = document.getElementById("residence_field").innerHTML = thirdField;
+    },
 
-};
+    editMultiple: function(){
+        var fourthField = prompt("Enter your field name", "Stuent/Non Student");
+        var changeField = document.getElementById("multiple").innerHTML = fourthField;
+    },
+
+    editGame: function() {
+        var fifthField = prompt("Enter your field name", "Game");
+        var changeField = document.getElementById("addGame").innerHTML = fifthField;
+    },
+
+    editContact: function() {
+        var sixthField = prompt("Enter your field name", "Mob/Phone");
+        var changeField = document.getElementById("editPhone").innerHTML = sixthField;
+    },
+
+    editTime: function () {
+        var seventhField = prompt("Enter your field name", "Timing");
+        var changeField = document.getElementById("Timing_field").innerHTML = seventhField;
+    },
+};  
 
 app.initialize();

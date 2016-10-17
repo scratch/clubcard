@@ -27,21 +27,28 @@ body {
     width: 50px;
     height: 50px;
 }
+.onclick_border {
+     width: 100%
+}
 input {
     width: 100%;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid black;
-    height: 39px;
     font-size: 16px;
     text-align: center;
+    border-bottom: 1px solid black;
 }
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+::-webkit-input-placeholder {  Chrome/Opera/Safari 
     color: black;
 }
 input:focus {
     outline: none;
-    border-bottom: 1px solid rgba(81, 203, 238, 1);
+    border-bottom: 1px solid skyblue;  
+}
+.onclick_border img{
+    width: 15px;
+    height: 15px;   
+    background: gainsboro;
 }
 .upload_image {
     margin-top: 10px;
@@ -59,15 +66,15 @@ input:focus {
     align: middle;
 }
 .generate_pass {
-   height: 50px;
-   width: 95%;
-   color: white;
-   background: red;
-   border-radius: 50px;
-   border: 0px;
-   font-size: 24px;
-   outline: none;
-   margin-left: 2.4%;
+ height: 50px;
+ width: 95%;
+ color: white;
+ background: red;
+ border-radius: 50px;
+ border: 0px;
+ font-size: 24px;
+ outline: none;
+ margin-left: 2.4%;
 
 }
 .user_icon {

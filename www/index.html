@@ -72,35 +72,62 @@
                 <label for="edit_logo" class="edit_logo_label"><img src="img/editicon.png"></label>
             </div>
             <form id="clubCardForm" action="card.html"s>
-                <!-- <label id="testname" onclick="app.edit();">Name</label> -->
-                <input type="text" id="userName" placeholder="Name" /><br />
-                <input type="text" id="dob" placeholder="Date of Birth"><br />
-                <input type="text" id="address" placeholder="Residence of"><br />
-                <input type="text" id="student_Non" placeholder="Student/Non Student"><br />
-                <input type="text" id="game" placeholder="Game"></br>
-                <input type="number" id="number" placeholder="Mob/Phone"> <br />
-                <input type="text" id="time" placeholder="Timing"><br />
+                <div class="onclick_border">
+                    <label id="nameLabel">Name :</label>
+                    <img onclick="app.editName();" src="img/editicon.png">
+                    <input type="text" id="userName" /><br />   
+                </div>
+                <div class="onclick_border">
+                    <label id="dateOfBirt">Date of Birth :</label>
+                    <img onclick="app.editDOB();" src="img/editicon.png">
+                    <input type="text" id="dob"><br />
+                </div>
+                <div class="onclick_border">
+                    <label id="residence_field">Address :</label>
+                    <img onclick="app.editAddress();" src="img/editicon.png">
+                    <input type="text" id="address"><br />
+                </div>
+                <div class="onclick_border">
+                    <label id="multiple">Student/Non Student :</label>
+                    <img onclick="app.editMultiple();" src="img/editicon.png">
+                    <input type="text" id="student_Non"><br />
+                </div>
+                <div class="onclick_border">
+                    <label id="addGame">Game :</label>
+                    <img onclick="app.editGame();" src="img/editicon.png">
+                    <input type="text" id="game"></br>
+                </div>
+                <div class="onclick_border">
+                    <label id="editPhone">Mob/Phone :</label>
+                    <img onclick="app.editContact();" src="img/editicon.png">
+                    <input type="number" id="number"> <br />
+                </div>
+                <div class="onclick_border">
+                    <label id="Timing_field">Timing :</label>
+                    <img onclick="app.editTime  ();" src="img/editicon.png">
+                    <input type="text" id="time"><br />
+                </div>
                 <input id="upload-file" class="upload_image" accept="image/*" type="file" onchange="app.readURLForProfile(this);">
-                <div class="user_icon">
-                    <div class="upload_label">
-                        <label for="upload-file" class="custom-file-upload">Upload Image ...</label>
-                    </div>
-                    <div class="user_image_cont">
-                        <img id="blah" src="img/profile_icon.png" class="upload_icon" alt="your image" />
-                    </div>
-
+               <div class="user_icon">
+                <div class="upload_label">
+                    <label for="upload-file" class="custom-file-upload">Upload Image ...</label>
+                </div>
+                <div class="user_image_cont">
+                    <img id="blah" src="img/profile_icon.png" class="upload_icon" alt="your image" />
                 </div>
 
-                <div class="submit-section">
-                    <button type="submit" class="generate_pass" onclick="return app.getvalues();">Generate Pass</button>
-                </div>
+            </div>
 
-                <script type="text/javascript" src="cordova.js"></script>
-                <script type="text/javascript" src="js/filesystem.js"></script>
-                <script type="text/javascript" src="js/index.js"></script>
-                <script type="text/javascript" src="js/html2canvas.js"></script>
-                <script type="text/javascript">
+            <div class="submit-section">
+                <button type="submit" class="generate_pass" onclick="return app.getvalues();">Generate Pass</button>
+            </div>
 
-                </script>
-            </body>
-            </html>
+            <script type="text/javascript" src="cordova.js"></script>
+            <script type="text/javascript" src="js/filesystem.js"></script>
+            <script type="text/javascript" src="js/index.js"></script>
+            <script type="text/javascript" src="js/html2canvas.js"></script>
+            <script type="text/javascript">
+
+            </script>
+        </body>
+        </html>

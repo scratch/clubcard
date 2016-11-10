@@ -41,7 +41,7 @@
     },
 
     drawer: function () {
-        document.getElementById("drawer").style.width = "50%";
+        document.getElementById("drawer").style.width = "70%";
         
     },
 

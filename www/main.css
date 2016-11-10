@@ -28,7 +28,7 @@ body {
     height: 50px;
 }
 .onclick_border {
-     width: 100%
+   width: 100%
 }
 input {
     width: 100%;
@@ -66,15 +66,15 @@ input:focus {
     align: middle;
 }
 .generate_pass {
- height: 50px;
- width: 95%;
- color: white;
- background: red;
- border-radius: 50px;
- border: 0px;
- font-size: 24px;
- outline: none;
- margin-left: 2.4%;
+   height: 50px;
+   width: 95%;
+   color: white;
+   background: red;
+   border-radius: 50px;
+   border: 0px;
+   font-size: 24px;
+   outline: none;
+   margin-left: 2.4%;
 
 }
 .user_icon {
@@ -148,4 +148,25 @@ div#reverse {
     cursor: pointer;
     margin-bottom: 10px;
     margin-left: 5px;
+}
+.box {
+  border: 0;
+  background: red;
+  border-radius: 10px;
+  box-shadow: 0 5px 0 red;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.box:active {
+  box-shadow: 0 2px 0 red;
+  transform: translateY(3px);
+  outline: none;
+}
+.box a {
+    text-decoration: none;
+    color: #ffffff;
 }

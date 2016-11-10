@@ -87,3 +87,12 @@ canvas {
         display: inline-block;
     }
 }
+/*css for backside of clubcard*/
+.back-side-main tr td {
+    height: 41.5px;
+}
+@media (orientation : landscape) {
+    .back-side-main tr td {
+        height: 18px;
+    }
+}

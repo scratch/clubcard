@@ -7,9 +7,25 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "gai.co.in.clubcard"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "gai.co.in.clubcard"
+        },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "gai.co.in.clubcard"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "PACKAGE_NAME": "gai.co.in.clubcard"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "gai.co.in.clubcard"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "gai.co.in.clubcard"
+        }
+    }
 }

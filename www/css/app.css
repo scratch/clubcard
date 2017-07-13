@@ -1,0 +1,257 @@
+body {
+
+}
+/*css for header*/
+header { 
+	background-color: #EE6E73;
+	width: 100%;
+}
+.open-menu i {
+	color: white;
+	padding: 10px;
+	font-size: 35px;
+}
+.menu-icon button {
+	background: none; 
+	border: none;
+}
+
+
+/*css for main index page*/
+.org-address-row {
+	margin-bottom: 0px ;
+}
+.organization-address {
+	margin-top: 20px;
+	text-align: center;
+	
+}
+.organization-address span {
+	color: #000000;
+	font-size: 20px;
+	font-weight: 600;
+}
+.org-address-row .editicon {
+	height: 20px;
+	width: 20px;
+}
+.organization-icon {
+	text-align: center;
+	margin-top: 10px;
+}
+.clogo {
+	height: 60px;
+	width: 60px;
+	border-radius: 30px;
+}
+.form-fields {
+	margin-top: 0px;
+}
+.form-fields  label {
+	top: 0px;
+	color: #000000;
+}
+.form-fields img {
+	float: right;
+	height: 20px;
+	width: 20px;
+}
+.form-fields input {
+	height: 20px !important;
+	text-align: center;
+	font-size: 18px;
+}
+.form-fields div {
+	padding: 0px !important;
+}
+.input-section {
+	margin-bottom: 0px;
+}
+.upload_image {
+	display: none;
+}
+.custom-file-upload {
+	color: #000000;
+	margin-left: 25px;
+	font-size: 15px;
+	border: 1px solid;
+	border-radius: 25px;
+	padding: 6px 12px;
+}
+.upload-image {
+	margin-top: 15px;
+}
+.Submit-button button {
+	width: 100%;
+	background: #EE6E73;
+	color: #ffffff;
+	font-size: 20px;
+	border-radius: 18px;
+	padding: 5px;
+	border: none;
+}
+.editLogo {
+	display: none;
+}
+.organization-icon i {
+	color: #000000;
+}
+.logo-row {
+	text-align: right;
+}
+.logo-label {
+	text-align: left;
+	margin-top: 10px;
+}
+.logo-label img {
+	height: 20px
+	width:20px;
+}
+.upload_file {
+	height: 60px;
+	width: 60px;
+	border-radius: 25px;
+}
+
+/*css for card page */
+.left {
+	padding: 0px !important;
+}
+.user_profile_image img {
+	height: 100px;
+	width: 100px;
+}
+.head3 i {
+	display: none;
+}
+.cardtype  {
+	margin-top: 23px;
+}
+.cardtype span {
+	font-size: 18px;
+	text-decoration: underline;
+}
+.card-logo {
+	margin-top: 15px
+}
+.card-logo img {
+	width: 50px;
+	height: 50px;
+}
+hr {
+	color: #f00;
+	background-color: #f00;
+	height: 10px;
+}
+.user-details {
+	font-weight: bold;
+}
+.gen-pass  {
+	color: #f4f4f4;
+	background: #EE6E73;
+	font-weight: bold;
+	margin-left: 5px;
+	font-family: Arial,sans-serif;
+	border-radius: 4px;
+	border: solid 0 #e3edf4;
+	border-bottom: 2px solid #EE6E73;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+/*css for footer*/
+
+/*css for qr */
+#qrcode {
+	width:100px;
+	height:100px;
+	margin-top:15px;
+}
+#qrcode img {
+	height: 120px;
+	width: 120px;
+}
+/* css for sidebar*/
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #ffffff;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+	box-shadow: 0px 1px 5px 1px
+}
+
+.sidenav a {
+	padding: 8px 8px 8px 32px;
+	font-size: 25px;
+	display: block;
+	transition: 0.3s;
+	color: #f4f4f4;
+	background: #EE6E73;
+	font-weight: bold;
+	margin-left: 5px;
+	font-family: Arial,sans-serif;
+	border-radius: 4px;
+	border: solid 0 #e3edf4;
+	border-bottom: 2px solid #ffffff;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+	color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+}
+/*media query for card page potrait mode*/
+@media only screen and (max-width: 480px) and (orientation: portrait) {
+	.user_profile_image img {
+		height: 80px;
+		width: 75px;
+	}
+	#qrcode {
+		width: 90px;
+		height: 85px;
+		margin-top: 80px;
+	}
+	#qrcode img {
+		height: 80px;
+		width: 85px;
+	}
+	.gen-pass {
+		display: none;
+	}
+}
+/*css for side nav*/
+.user-view {
+	text-align: center;
+}
+.user-view span {
+	font-size: 18px;
+	font-weight: 600;
+}
+.about-app {
+	height: 27px;
+	width: 27px;
+	margin-top: 10px;
+}
+/* css for about page*/
+.about-page {
+	text-align: center;
+}

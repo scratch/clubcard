@@ -1,11 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="gai.co.in.clubcard" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>ClubPass</name>
+<widget id="gai.co.in.clubcard" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://gai.co.in">
+     <platform name="android">
+        <splash src="www/img/screen.png" />
+        <preference name="SplashScreenBackgroundColor" value="white" />
+    </platform>
+    <name>ClubCard</name>
+    <preference name="AndroidPersistentFileLocation" value="Internal" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+   
     <description>
         Application to generate Access cards for sports clubs
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="anuj.k@gai.co.in" href="http://gai.co.in">
+        Gai Technologies
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
@@ -23,4 +30,5 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <icon src="www/img/logo.png" />
 </widget>

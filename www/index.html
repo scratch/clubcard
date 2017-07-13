@@ -9,126 +9,133 @@
     with the License.  You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
-
+ 
     Unless required by applicable law or agreed to in writing,
     software distributed under the License is distributed on an
     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
      KIND, either express or implied.  See the License for the
     specific language governing permissions and limitations
     under the License.
--->
-<html>
-<head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-            -->
-            <!--  <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com"> -->
+  -->
+  <html>
+  <head>
 
-            <meta name="format-detection" content="telephone=no">
-            <meta name="msapplication-tap-highlight" content="no">
-            <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-            <!-- <link rel="stylesheet" type="text/css" href="css/index.css"> -->
-            <title>Hello World</title>
-            <link rel="stylesheet" type="text/css" href="main.css">
-        </head>
-        <body>
-            <div id="open-draw">
-                <div id="left-menu">
-                    <img onclick="app.drawer()" src="img/menu-icon.png">
-                </div>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/icon.css">
 
-                <div class='drawer' id="drawer">
-                    <div id="reverse">
-                        <img onclick="app.closeDrawer()"" src="img/rv-arrow.png">
-                    </div>
-                    <button class="box"><a href="#">Choose Your Templete</a></button>
-                    <button class="box"><a href="#">Create Your Form</a></button>
-                    <button class="box"><a href="backSide.html">Backside of Card</a></button>
-                </div>
+    <script type="text/javascript" src="js/jquery.js"></script>
+  </head>
+  <body>
+    <header>       
+      <ul id="slide-out" class="side-nav">
+        <li>
+          <div class="user-view">
+            <div class="background">
+              <img src="img/gai_logo.png">
             </div>
-            <div class="app">
+            <span class="nav-app">ClubCard</span>
+          </div>
+          <li><div class="divider"></div></li>
+        </li>
+        <li><a href="index.html"><i class="material-icons">playlist_add</i>Create New Card</a></li>
+        <li onclick="app.scanCode();"><a href="#" ><i class="material-icons">settings_overscan</i>Scan Qr</a></li>
+        <li><a href="about.html"><i><img class="about-app" src="img/gai_logo.png"></i>About</a></li>
+        <li><a class="contact"><i class="material-icons">contact_phone</i>Contact</a></li>
+      </ul>
+      <a href="#" data-activates="slide-out" class="button-collapse open-menu"><i class="material-icons">menu</i></a>
 
-            </div>
-            <div class="head_section" style="width: 100%">
-                <span id="organisation" class="head1" >
-                    Dept of Youth Services & Sports H.P 
-                </span><img onclick="app.editHeading();" src="img/editicon.png"><br />
-                <span id="title" class="head2" onclick="app.editHeading();">
-                    Indoor Stadium Dharamshala
-                </span><img onclick="app.editTitle();" src="img/editicon.png"><br />
-                <span id="cardType" class="head3">
-                    Identity card
-                </span><img onclick="app.editCard();" src="img/editicon.png">
+    </header>
+    <div class="container index-container">
+      <div class="row org-address-row">
+        <div class="col s12 col m12 organization-address">
+          <span id="deparment">Dept of Youth Services & Sports H.P</span>
+          <img class="editicon" onclick="app.editHeading();" src="img/editicon.svg" />
+        </div>
+        <div class="col s12 m12 organization-address">
+          <span id="sec-department">Indoor Stadium Dharamshala </span>
+          <img class="editicon" onclick="app.editTitle();" src="img/editicon.svg" />
+        </div>
+        <div id="third-deparment" class="col s12 m12 organization-address" />
+        <span id="cardType">Identity card</span>
+        <img class="editicon" onclick="app.cardType();" src="img/editicon.svg" />
+      </div>
+      <div class="col s12 m12 organization-icon">
+        <input id="edit_logo" class="editLogo" accept="image/*" type="file" onchange="app.readURLForEditLogo(this);">
+        <div class="col s7 logo-row">
+          <img id="logo_edit" class="clogo" src="img/gai_logo.png">
+        </div>
+        <div class="col s5 logo-label">
+          <label for="edit_logo" class="edit_logo_label"><img class="editicon" src="img/editicon.svg"></label>
+        </div>
+      </div>
+    </div>  
+    <form id="clubcardForm" action="card.html">
+     <div class="row input-section">
+      <div class="col s12 form-fields">
+        <div class="sol s12">
+         <label id="nameLabel">Name</label>
+         <img class="editicon" onclick="app.editName();" src="img/editicon.svg">
+         <input type="text" id="userName" />   
+       </div>
+       <div class="col s12">
+        <label id="dateOfBirt">Date Of Birth</label>
+        <img class="editicon" onclick="app.editDOB();" src="img/editicon.svg">
+        <input type="text" id="dob">
+      </div>
+      <div class="col s12">
+        <label id="residence_field">Address</label>
+        <img class="editicon" onclick="app.editAddress()" src="img/editicon.svg">
+        <input id="address" type="text" class="validate">
+      </div>
+      <div>
+        <label id="multiple">Student/Non Student</label>
+        <img class="editicon" onclick="app.editMultiple();" src="img/editicon.svg">
+        <input id="student_Non" type="text" class="validate">
+      </div>
+      <div>
+        <label id="addGame">Game</label>
+        <img class="editicon" onclick="app.editGame();" src="img/editicon.svg">
+        <input id="game" type="text" class="validate">
+      </div>
+      <div>
+        <label id="editPhone">Mob/Phone</label>
+        <img class="editicon" onclick="app.editContact();" src="img/editicon.svg">
+        <input id="number" type="text" class="validate">
+      </div>
+      <div>
+        <label id="Timing_field">Timing</label>
+        <img class="editicon" onclick="app.editTime();" src="img/editicon.svg">
+        <input id="time" type="text" class="validate">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6 upload-image">
+        <input id="upload-file" class="upload_image" accept="image/*" onchange="app.readURLForProfile(this);" type="file">
+        <label for="upload-file" class="custom-file-upload">Upload Image ...</label>
+      </div>
+      <div class="col s6 upload-icon">
+       <img id="blah" src="img/uploadimage.png" class="upload_file" alt="your image">
+     </div>
+   </div>
+ </div>
 
-            </div>
-            <input id="edit_logo" class="editLogo" accept="image/*" type="file" onchange="app.readURLForEditLogo(this);">
-            <div class="logo">
-                <img id="logo_edit" src="img/gai_logo.png" />
-                <label for="edit_logo" class="edit_logo_label"><img src="img/editicon.png"></label>
-            </div>
-            <form id="clubCardForm" action="card.html"s>
-                <div class="onclick_border">
-                    <label id="nameLabel">Name :</label>
-                    <img onclick="app.editName();" src="img/editicon.png">
-                    <input type="text" id="userName" /><br />   
-                </div>
-                <div class="onclick_border">
-                    <label id="dateOfBirt">Date of Birth :</label>
-                    <img onclick="app.editDOB();" src="img/editicon.png">
-                    <input type="text" id="dob"><br />
-                </div>
-                <div class="onclick_border">
-                    <label id="residence_field">Address :</label>
-                    <img onclick="app.editAddress();" src="img/editicon.png">
-                    <input type="text" id="address"><br />
-                </div>
-                <div class="onclick_border">
-                    <label id="multiple">Student/Non Student :</label>
-                    <img onclick="app.editMultiple();" src="img/editicon.png">
-                    <input type="text" id="student_Non"><br />
-                </div>
-                <div class="onclick_border">
-                    <label id="addGame">Game :</label>
-                    <img onclick="app.editGame();" src="img/editicon.png">
-                    <input type="text" id="game"></br>
-                </div>
-                <div class="onclick_border">
-                    <label id="editPhone">Mob/Phone :</label>
-                    <img onclick="app.editContact();" src="img/editicon.png">
-                    <input type="number" id="number"> <br />
-                </div>
-                <div class="onclick_border">
-                    <label id="Timing_field">Timing :</label>
-                    <img onclick="app.editTime  ();" src="img/editicon.png">
-                    <input type="text" id="time"><br />
-                </div>
-                <input id="upload-file" class="upload_image" accept="image/*" type="file" onchange="app.readURLForProfile(this);">
-               <div class="user_icon">
-                <div class="upload_label">
-                    <label for="upload-file" class="custom-file-upload">Upload Image ...</label>
-                </div>
-                <div class="user_image_cont">
-                    <img id="blah" src="img/profile_icon.png" class="upload_icon" alt="your image" />
-                </div>
 
-            </div>
-
-            <div class="submit-section">
-                <button type="submit" class="generate_pass" onclick="return app.getvalues();">Generate Pass</button>
-            </div>
-
-            <script type="text/javascript" src="cordova.js"></script>
-            <script type="text/javascript" src="js/filesystem.js"></script>
-            <script type="text/javascript" src="js/index.js"></script>
-            <script type="text/javascript" src="js/html2canvas.js"></script>
-            <script type="text/javascript">
-
-            </script>
-        </body>
-        </html>
+ <div class="row"> 
+  <div class="col s12 Submit-button">
+    <button onclick="return app.getvalues();" type="submit">Generate Card</button>
+  </div>
+</div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/materialize.js"></script>
+<script type="text/javascript" src="js/materialjquery.js"></script>
+<script type="text/javascript" src="js/filesystem.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

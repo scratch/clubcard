@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="gai.co.in.clubcard" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://gai.co.in">
+    <feature name="BarcodeScanner">
+        <param name="browser-package" value="BarcodeScanner" />
+    </feature>
+    <name>ClubCard</name>
+    <description>
+        Application to generate Access cards for sports clubs
+    </description>
+    <author email="anuj.k@gai.co.in" href="http://gai.co.in">
+        Gai Technologies
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <icon src="www/img/logo.png" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+</widget>
